@@ -278,7 +278,8 @@ void NwDesktopCaptureMonitor::OnSourceAdded(DesktopMediaList* list, int index) {
       base::UTF16ToUTF8(src.name),
       index,
       type,
-      src.id.type == content::DesktopMediaID::TYPE_SCREEN && GetPrimaryMonitorIndex() == index);
+      src.id.type == content::DesktopMediaID::TYPE_SCREEN && GetPrimaryMonitorIndex() == index,
+      base::UTF16ToUTF8(src.id.class_name));
 
     DispatchEvent(
       events::HistogramValue::UNKNOWN, 
